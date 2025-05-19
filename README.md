@@ -1,6 +1,6 @@
-# Performance Testing Script Generator
+# Typhon - Performance Testing Assistant
 
-This project provides an interactive tool to generate performance test setups and JMeter test plans using Google's Gemini AI.
+Typhon is an AI-powered performance testing tool that generates JMeter test plans using Google's Gemini AI. It simplifies the creation of performance tests by providing intelligent suggestions and configurations.
 
 ## Prerequisites
 
@@ -22,53 +22,46 @@ This project provides an interactive tool to generate performance test setups an
 
 ## Usage
 
-The project consists of two main scripts:
+Run the performance test assistant:
+```bash
+python performance_test_assistant.py
+```
 
-### 1. Performance Test Setup Generator (`performance_test_setup.py`)
+The interactive assistant will guide you through:
+1. Providing your performance testing requirements
+2. Receiving AI-generated test setup suggestions
+3. Refining the setup based on your feedback
+4. Generating a JMeter test plan (.jmx file)
 
-This script helps you create a detailed performance test setup:
-
-1. Run the script:
-   ```bash
-   python performance_test_setup.py
-   ```
-2. Follow the interactive prompts to:
-   - Select the type of performance test (Load, Stress, Spike, Endurance, or Scalability)
-   - Enter test parameters (target URL, concurrent users, ramp-up time, test duration)
-   - Review and modify the generated test setup
-3. The script will save your test setup to `test_setup.json`
-
-### 2. JMeter Test Plan Generator (`jmeter_generator.py`)
-
-This script generates a JMeter test plan based on your test setup:
-
-1. Run the script:
-   ```bash
-   python jmeter_generator.py
-   ```
-2. The script will:
-   - Load your test setup from `test_setup.json`
-   - Generate a JMeter test plan using Gemini AI
-   - Save the test plan as a .jmx file in the `jmeter-tests` directory
-
-## Generated Files
-
-- `test_setup.json`: Contains your performance test configuration
-- `jmeter-tests/*.jmx`: Generated JMeter test plans
+All generated test plans are saved in the `jmeter-tests/test-plans` directory.
 
 ## Features
 
-- Interactive test setup generation
-- Support for multiple types of performance tests
-- AI-powered test plan generation
-- Customizable test parameters
-- JMeter-compatible output
+- **Interactive Test Design**: Conversational interface to describe your testing needs
+- **Gemini 2.0 Flash AI**: Advanced AI model for intelligent test configuration
+- **Multiple Test Types**: Support for load, stress, spike, endurance, and scalability tests
+- **Customizable Parameters**: Easily adjust users, ramp-up time, duration, and more
+- **JMeter Integration**: Generate ready-to-use JMeter test plans
+- **Test Refinement**: Iterative process to fine-tune your test setup
+- **Compatibility Checks**: Ensures generated plans work with JMeter 5.6.3
+- **Organized Test Management**: Structured storage of test plans and reports
 
-## Notes
+## Project Structure
 
-- Make sure to review the generated JMeter test plans before running them
-- The Gemini AI may occasionally need adjustments to the generated test plans
-- Test parameters should be chosen carefully based on your system's capabilities
+- `performance_test_assistant.py`: Main script with the PerformanceTestAssistant class
+- `jmeter-tests/`: Directory containing generated test plans and data
+- `requirements.txt`: List of Python dependencies
+
+## Future Plans
+
+- Web interface for easier interaction with the assistant
+- Support for more performance testing tools beyond JMeter
+- Test result analysis and visualization
+- Integration with CI/CD pipelines
+- Extended templates for various application types (REST APIs, databases, etc.)
+- Load test distribution capabilities
+- Performance test scheduling
+- Historical test results comparison
 
 ## License
 
